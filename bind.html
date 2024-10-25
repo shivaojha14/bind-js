@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="my-button">button</button> <!-- Changed from class="my" to id="my-button" -->
+    <script>
+        let person = {
+            name: 'Shiva Ojha',
+            greet: function() {
+                console.log(`Hello, my name is ${this.name}`);
+            }
+        };
+
+        let button = document.querySelector('#my-button'); // Select by ID
+        button.addEventListener('click', person.greet.bind(person)); // 'this' refers to 'person', not 'button'
+    </script>
+</body>
+</html>
